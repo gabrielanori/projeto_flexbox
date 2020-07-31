@@ -1,0 +1,47 @@
+body {
+    font: 100%/2 arial;
+}
+
+.container{
+    /*overflow: auto;  auto faz barra de rolagem // overflow: hidden some com o que ultrapassar a caixa*/
+    border: 4px solid red;
+     /* display controla como o elemento eh exibido na tela 2 tipos block e */
+     margin: auto;
+     width: 400px;
+     height: 400px;
+     display: flex; /* esse eh para container propriedade pai passa para os fihos*/
+     /* flex-direction: row; direção --- column uma 1 unica coluna! row eles ficam em uma unica linha ...controla eixos...controla a disposicação se elem linha ou coluna*/
+    /* flex-wrap: wrap;  wrap - quebra de linha se nao cabe vai pra proxima linha*/
+     /*flex-flow: <flex direction > <flex - wrap>;*/
+     flex-flow: row nowrap; /* wrap-reverse ele muda o sentido do eixo*/
+     /*justify-content: space-between;  main acess eixo principal //flex-start eh o começo // lembra text align, mas nesse leva os filhos */
+     justify-content: left;
+     align-items: baseline; /* center no meio do container strech estica da ALTURA controla eixo vertical do container centraliza na altura*/
+
+}
+
+.item {
+    border: 2px solid blue;
+    background-color: aquamarine;
+    /*display: inline; por padrao ele ja tem uma renderização */
+   /* padding: 1.5em;*/
+   text-align: center;
+   /*  flex-grow: 1; distribui os espaços proporcionalmente entre os itens */
+   /* flex-shrink: 0; encolhe ele eh o contrario do flex-grow ele com o 0 zero ele passa da linha se sobra espaço*/
+    /*flex-basis: 100px;
+    flex: <flex-grow> <flex-shrink> <flex-basis>; */
+   flex: 1 1 100px;
+}
+
+ .item:nth-child(3) /*especifica este item */{
+    background-color: yellow;
+    order: 0;
+/*todos os quadrados sao zero qdo coloco -1 ele vai para o canto esquerdo -1 0 1 */
+    align-self: flex-start; /*controlou de forma individual*/
+   /* flex-grow: 4; aumenta soh esse item*/
+}
+/*.item:nth-child(5) especifica este item {
+    background-color: darkgoldenrod;
+    font-size: 4em;
+
+} */
